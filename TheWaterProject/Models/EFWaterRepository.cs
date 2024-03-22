@@ -8,6 +8,6 @@ namespace TheWaterProject.Models
         {
             _context = temp;
         }
-        public IQueryable<Project> Projects => _context.Projects;
+        public IQueryable<Book> Books => _context.Books;
     }
 }

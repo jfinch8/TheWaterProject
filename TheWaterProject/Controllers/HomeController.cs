@@ -16,11 +16,11 @@ namespace TheWaterProject.Controllers
 
         public IActionResult Index(int pageNum)
         {
-            int pageSize = 5;
+            int pageSize = 10;
             var blah = new ProjectsListViewModel
             {
-                Projects = _repo.Projects
-                .OrderBy(x => x.ProjectName)
+                Books = _repo.Books
+                .OrderBy(x => x.Title)
                 .Skip((pageNum - 1) * pageSize)
                 .Take(pageSize),
 
@@ -28,7 +28,7 @@ namespace TheWaterProject.Controllers
                 {
                     CurrentPage = pageNum,
                     ItemsPerPage = pageSize,
-                    TotalItems = _repo.Projects.Count()
+                    TotalItems = _repo.Books.Count()
 
                 }
         };

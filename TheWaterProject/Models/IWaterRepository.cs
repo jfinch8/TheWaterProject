@@ -2,6 +2,6 @@
 {
     public interface IWaterRepository
     {
-        public IQueryable<Project> Projects { get; }
+        public IQueryable<Book> Books { get; }
     }
 }

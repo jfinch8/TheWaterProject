@@ -4,9 +4,8 @@
 
 @model ProjectsListViewModel
 
-    <h1>The Water Project</h1>
 
-        @foreach (Project p in Model.Projects)
+        @foreach (Book p in Model.Books)
     {
         <partial name="ProjectSummary" model="p"/>
     }

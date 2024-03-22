@@ -4,16 +4,20 @@
 @{
 }
 
-@model Project
+@model Book
 
 <div class="card m-1 p-1">
     <h4>
-        @Model.ProjectName
-        <span class="badge rounded-pill bg-primary text-white float-end"><small>@Model.ProjectImpact served</small></span>
+        @Model.Title
+        <span class="badge rounded-pill bg-primary text-white float-end"><small>@Model.ISBN</small></span>
     </h4>
     <ul>
-        <li>Project Type: @Model.ProjectType</li>
-        <li>Regional Program: @Model.ProjectName</li>
-        <li>Installation Date: @Model.ProjectInstallation</li>
+        <li>Author: @Model.Author</li>
+        <li>Publisher: @Model.Publisher</li>
+        <li>Classification: @Model.Classification</li>
+        <li>Category: @Model.Category</li>
+        <li>Page Count: @Model.PageCount</li>
+        <li>Price: @Model.Price</li>
     </ul>
+
 </div>
