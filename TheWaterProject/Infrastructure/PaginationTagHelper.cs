@@ -12,6 +12,7 @@ namespace TheWaterProject.Infrastructure
     {
         private IUrlHelperFactory urlHelperFactory;
 
+        // Constructor to initialize the tag helper with an IUrlHelperFactory instance
         public PaginationTagHelper (IUrlHelperFactory temp)
         {
             urlHelperFactory = temp;
@@ -26,20 +27,27 @@ namespace TheWaterProject.Infrastructure
         public string PageClass { get; set; } = String.Empty;
         public string PageClassNormal {  get; set; } = String.Empty;
         public string PageClassSelected {  get; set; } = String.Empty;
+
+        // Method to process the tag helper
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             if (ViewContext != null && PageModel != null)
             {
+                // Retrieve URL helper
                 IUrlHelper urlHelper = urlHelperFactory.GetUrlHelper(ViewContext);
 
+                // Create a div tag to contain pagination links
                 TagBuilder result = new TagBuilder("div");
 
+                // Loop through each page and create a link
                 for (int i = 1; i<= PageModel.TotalNumPages; i++)
                 {
                     TagBuilder tag = new TagBuilder("a");
 
+                    // Set href attribute to link to the corresponding page
                     tag.Attributes["href"] = urlHelper.Action(PageAction, new { pageNum = i });
 
+                    // Add CSS classes if enabled
                     if (PageClassesEnabled)
                     {
                         tag.AddCssClass(PageClass);
