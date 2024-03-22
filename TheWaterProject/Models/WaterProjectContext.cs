@@ -6,7 +6,7 @@ namespace TheWaterProject.Models
     {
         public WaterProjectContext (DbContextOptions<WaterProjectContext> options) : base(options) { }
 
-        public DbSet<Project> Projects { get; set; }
+        public DbSet<Book> Books { get; set; }
 
 
     }

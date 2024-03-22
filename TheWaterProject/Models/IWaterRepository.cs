@@ -2,6 +2,7 @@
 {
     public interface IWaterRepository
     {
-        public IQueryable<Project> Projects { get; }
+        // Property to retrieve a queryable collection of books
+        public IQueryable<Book> Books { get; }
     }
 }
